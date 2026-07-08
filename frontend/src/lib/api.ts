@@ -10,6 +10,10 @@ export interface ClusterSummary {
   priority_score?: number;
   rank?: number;
   centroid?: { lat: number; lng: number };
+  channel_breakdown?: Record<string, number>;
+  first_reported?: string;
+  last_reported?: string;
+  score_breakdown?: any;
 }
 
 export interface Hotspot {
@@ -24,6 +28,7 @@ export interface ConstituencyRollup {
   total_clusters: number;
   actioned_count: number;
   resolved_count: number;
+  ward_count?: number;
 }
 
 export interface Weights {
@@ -65,21 +70,31 @@ async function fetchAPI(endpoint: string, options: RequestInit = {}) {
 }
 
 export const api = {
-  // Keep the multimodal function that TypeScript found
+  // --- Citizen Endpoints ---
   submitMultimodal: async (formData: FormData) => {
-    const res = await fetch(`${API_BASE}/submissions`, {
-      method: "POST",
-      body: formData,
-    });
+    const res = await fetch(`${API_BASE}/submissions`, { method: "POST", body: formData });
     return res.json();
   },
-  
-  // All the missing routes your pages are looking for
   submitReport: async (payload: any) => fetchAPI("/submissions", { method: "POST", body: JSON.stringify(payload) }),
   nearbyIssues: async (wardId: string): Promise<ClusterSummary[]> => fetchAPI(`/issue-clusters/nearby?ward_id=${wardId}`),
+  applyUpvote: async (payload: { cluster_id: string; citizen_phone_hash: string }) => fetchAPI("/upvotes/apply", { method: "POST", body: JSON.stringify(payload) }),
+  checkUpvoteMatch: async (payload: any) => fetchAPI("/upvotes/check", { method: "POST", body: JSON.stringify(payload) }),
+  mySubmissionsStatus: async (citizenPhoneHash: string) => fetchAPI(`/submissions/status?citizen_phone_hash=${citizenPhoneHash}`),
+
+  // --- Dashboard / Admin Endpoints ---
   topPriorities: async (constituency: string, limit = 5): Promise<ClusterSummary[]> => fetchAPI(`/dashboard/top-priorities?constituency=${constituency}&limit=${limit}`),
   heatmap: async (constituency: string): Promise<Hotspot[]> => fetchAPI(`/dashboard/heatmap?constituency=${constituency}`),
   listConstituencies: async (): Promise<ConstituencyRollup[]> => fetchAPI(`/district/constituencies`),
   rescore: async (constituency: string, weights: Weights): Promise<ClusterSummary[]> => fetchAPI(`/dashboard/rescore?constituency=${constituency}`, { method: "POST", body: JSON.stringify(weights) }),
+  getClusterDetail: async (clusterId: string) => fetchAPI(`/clusters/${clusterId}`),
+  generateRecommendation: async (clusterId: string) => fetchAPI(`/clusters/${clusterId}/recommendation`, { method: "POST" }),
+  
+  // --- District / Panchayat Endpoints ---
+  implementationTracker: async (constituency?: string) => fetchAPI(constituency ? `/district/implementation-tracker?constituency=${constituency}` : `/district/implementation-tracker`),
+  updateClusterStatus: async (clusterId: string, status: string) => fetchAPI(`/clusters/${clusterId}/status`, { method: "PATCH", body: JSON.stringify({ status }) }),
+  panchayatWardDetail: async (wardId: string) => fetchAPI(`/panchayat/ward/${wardId}`),
+  annotateCluster: async (clusterId: string, payload: any) => fetchAPI(`/clusters/${clusterId}/annotate`, { method: "POST", body: JSON.stringify(payload) }),
+
+  // --- Global ---
   askAI: async (payload: any) => fetchAPI("/assistant/ask", { method: "POST", body: JSON.stringify(payload) }),
 };
