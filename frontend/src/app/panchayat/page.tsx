@@ -75,7 +75,7 @@ export default function PanchayatPage() {
         )}
 
         <div className="space-y-4">
-          {clusters.map((c) => (
+          {clusters.map((c: any) => (
             <ClusterAnnotationCard key={c.cluster_id} cluster={c} />
           ))}
           {!loading && !error && clusters.length === 0 && (
