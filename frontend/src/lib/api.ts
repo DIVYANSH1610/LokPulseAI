@@ -105,7 +105,7 @@ export const api = {
   implementationTracker: async (constituency?: string) => fetchAPI(constituency ? `/district/implementation-tracker?constituency=${constituency}` : `/district/implementation-tracker`),
   updateClusterStatus: async (clusterId: string, status: string) => fetchAPI(`/clusters/${clusterId}/status`, { method: "PATCH", body: JSON.stringify({ status }) }),
   panchayatWardDetail: async (wardId: string) => fetchAPI(`/panchayat/ward/${wardId}`),
-  annotateCluster: async (clusterId: string, payload: any) => fetchAPI(`/clusters/${clusterId}/annotate`, { method: "POST", body: JSON.stringify(payload) }),
+  annotateCluster: async (clusterId: string, note: any, officerName?: any) => fetchAPI(`/clusters/${clusterId}/annotate`, { method: "POST", body: JSON.stringify(officerName ? { note, officerName } : note) }),
 
   // --- Global ---
   askAI: async (payload: any) => fetchAPI("/assistant/ask", { method: "POST", body: JSON.stringify(payload) }),
