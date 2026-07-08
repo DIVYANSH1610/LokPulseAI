@@ -38,7 +38,7 @@ export default function StatusPage() {
 
   useEffect(() => {
     api
-      .submissionStatus(getCitizenId())
+      .mySubmissionsStatus(getCitizenId())
       .then(setItems)
       .catch(() => setError("Could not load your submissions."))
       .finally(() => setLoading(false));
