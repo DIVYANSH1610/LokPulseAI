@@ -1,0 +1,42 @@
+
+:root{
+
+--primary:#2563eb;
+--secondary:#06b6d4;
+--accent:#14b8a6;
+
+--background:#f8fbff;
+
+--glass:rgba(255,255,255,.65);
+
+--border:rgba(255,255,255,.35);
+
+--radius:24px;
+
+}
+
+body{
+
+background:
+
+radial-gradient(circle at top right,#dff7ff,transparent),
+
+radial-gradient(circle at bottom left,#eff8ff,transparent),
+
+#f8fbff;
+
+font-family:Inter,sans-serif;
+
+}
+
+.glass{
+
+backdrop-filter:blur(18px);
+
+background:var(--glass);
+
+border:1px solid var(--border);
+
+border-radius:var(--radius);
+
+}

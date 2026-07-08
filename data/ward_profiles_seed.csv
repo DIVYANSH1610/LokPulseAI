@@ -1,0 +1,11 @@
+ward_id,ward_name,constituency,population,sc_st_percentage,nearest_phc_km,nearest_school_km,literacy_rate,health_index,flood_prone,air_quality_index,years_since_last_dev_spend
+LKO-W01,Aliganj,Lucknow,32000,12.5,4.2,1.1,78.4,62.0,False,180,3
+LKO-W02,Chinhat,Lucknow,45500,22.1,7.8,2.4,64.2,51.5,True,210,7
+LKO-W03,Gomti Nagar,Lucknow,58000,8.3,2.1,0.8,84.1,71.2,False,165,1
+LKO-W04,Malihabad,Lucknow,28700,31.6,9.4,3.6,58.9,47.8,True,140,9
+LKO-W05,Mohanlalganj,Lucknow,36200,27.9,6.5,2.9,61.3,49.0,False,155,6
+LKO-W06,Alambagh,Lucknow,41000,15.2,3.3,1.5,72.6,58.4,False,195,4
+LKO-W07,Bakshi Ka Talab,Lucknow,29800,24.7,8.9,3.1,59.7,48.6,True,148,8
+LKO-W08,Sarojini Nagar,Lucknow,52300,18.4,5.6,1.9,69.8,55.3,False,172,5
+LKO-W09,Nagram,Lucknow,21400,29.3,11.2,4.4,55.1,44.9,True,138,10
+LKO-W10,Bijnor,Lucknow,33900,20.8,7.1,2.7,63.5,50.2,False,160,6

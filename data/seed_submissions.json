@@ -1,0 +1,82 @@
+[
+  {
+    "citizen_phone_hash": "hash_c001",
+    "channel": "whatsapp",
+    "raw_text": "Sadak me bahut bada gaddha hai Malihabad crossing ke paas, roz accident hota hai",
+    "ward_id": "LKO-W04",
+    "lat": 26.966,
+    "lng": 80.716
+  },
+  {
+    "citizen_phone_hash": "hash_c002",
+    "channel": "sms",
+    "raw_text": "Deep pothole near Malihabad crossing causing daily near-accidents, please fix urgently",
+    "ward_id": "LKO-W04",
+    "lat": 26.9665,
+    "lng": 80.7162
+  },
+  {
+    "citizen_phone_hash": "hash_c003",
+    "channel": "text",
+    "raw_text": "Nearest PHC is 9km away from our village in Malihabad, pregnant women struggle to reach in emergencies",
+    "ward_id": "LKO-W04",
+    "lat": 26.97,
+    "lng": 80.718
+  },
+  {
+    "citizen_phone_hash": "hash_c004",
+    "channel": "whatsapp",
+    "raw_text": "Baar baar flood ho raha hai Chinhat me, ghar me pani aa jata hai monsoon me",
+    "ward_id": "LKO-W02",
+    "lat": 26.912,
+    "lng": 81.001
+  },
+  {
+    "citizen_phone_hash": "hash_c005",
+    "channel": "text",
+    "raw_text": "Chinhat area floods every monsoon, no drainage system, water enters homes",
+    "ward_id": "LKO-W02",
+    "lat": 26.9125,
+    "lng": 81.0012
+  },
+  {
+    "citizen_phone_hash": "hash_c006",
+    "channel": "sms",
+    "raw_text": "School building in Nagram has cracked walls, unsafe for children",
+    "ward_id": "LKO-W09",
+    "lat": 26.72,
+    "lng": 81.05
+  },
+  {
+    "citizen_phone_hash": "hash_c007",
+    "channel": "whatsapp",
+    "raw_text": "Bakshi Ka Talab me bijli baar baar jaati hai, transformer kharab hai",
+    "ward_id": "LKO-W07",
+    "lat": 26.99,
+    "lng": 80.87
+  },
+  {
+    "citizen_phone_hash": "hash_c008",
+    "channel": "text",
+    "raw_text": "Frequent power cuts in Bakshi Ka Talab, faulty transformer needs replacement",
+    "ward_id": "LKO-W07",
+    "lat": 26.9905,
+    "lng": 80.8705
+  },
+  {
+    "citizen_phone_hash": "hash_c009",
+    "channel": "whatsapp",
+    "raw_text": "Garbage not collected for two weeks in Sarojini Nagar sector 3",
+    "ward_id": "LKO-W08",
+    "lat": 26.85,
+    "lng": 80.94
+  },
+  {
+    "citizen_phone_hash": "hash_c010",
+    "channel": "text",
+    "raw_text": "Irrigation canal broken in Mohanlalganm farms, crops drying up before harvest",
+    "ward_id": "LKO-W05",
+    "lat": 26.72,
+    "lng": 80.91
+  }
+]
