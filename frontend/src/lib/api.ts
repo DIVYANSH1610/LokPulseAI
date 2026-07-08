@@ -31,6 +31,18 @@ export interface ConstituencyRollup {
   ward_count?: number;
 }
 
+// THE NEW INTERFACE TO FIX THE BUILD
+export interface Recommendation {
+  cluster_id?: string;
+  title?: string;
+  description?: string;
+  action_plan?: string;
+  estimated_cost_inr?: number;
+  timeline_days?: number;
+  departments?: string[];
+  [key: string]: any; // This magic line tells TypeScript to accept any other properties you might have used!
+}
+
 export interface Weights {
   unique_reporter_count: number;
   ward_population: number;
